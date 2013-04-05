@@ -468,6 +468,9 @@
    `(org-agenda-structure
      ((t (:inherit font-lock-comment-face))))
    `(org-archived ((t (:foreground ,zenburn-fg :weight bold))))
+   `(org-block-begin-line ((t (:underline ,zenburn-fg-1 :background ,zenburn-bg-05 :foreground ,zenburn-yellow-2))))
+   `(org-block-background ((t (:background ,zenburn-bg+1))))
+   `(org-block-end-line ((t (:overline ,zenburn-fg-1 :background ,zenburn-bg-05 :foreground ,zenburn-yellow-2))))
    `(org-checkbox ((t (:background ,zenburn-bg+2 :foreground "white"
                                    :box (:line-width 1 :style released-button)))))
    `(org-date ((t (:foreground ,zenburn-blue :underline t))))
@@ -485,6 +488,7 @@
    `(org-level-7 ((t (:foreground ,zenburn-red-4))))
    `(org-level-8 ((t (:foreground ,zenburn-blue-4))))
    `(org-link ((t (:foreground ,zenburn-yellow-2 :underline t))))
+   `(org-meta-line ((t (:foreground ,zenburn-blue-2))))
    `(org-scheduled ((t (:foreground ,zenburn-green+4))))
    `(org-scheduled-previously ((t (:foreground ,zenburn-red-4))))
    `(org-scheduled-today ((t (:foreground ,zenburn-blue+1))))
