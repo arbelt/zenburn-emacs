@@ -663,6 +663,17 @@
    ;; which-func-mode
    `(which-func ((t (:foreground ,zenburn-green+4))))
 
+   ;; workgroups
+   `(wg-brace-face ((t (:foreground ,zenburn-fg-1))))
+   `(wg-command-face ((t (:foreground ,zenburn-yellow))))
+   `(wg-current-workgroup-face ((t (:foreground ,zenburn-blue+1))))
+   `(wg-divider-face ((t (:foreground ,zenburn-fg-1))))
+   `(wg-filename-face ((t (:foreground ,zenburn-cyan))))
+   `(wg-frame-face ((t (:foreground ,zenburn-red))))
+   `(wg-message-face ((t (:foreground ,zenburn-green+2))))
+   `(wg-mode-line-face ((t (:foreground ,zenburn-cyan))))
+   `(wg-previous-workgroup-face ((t (:foreground ,zenburn-magenta))))
+
    ;; yascroll
    `(yascroll:thumb-text-area ((t (:background ,zenburn-bg-1))))
    `(yascroll:thumb-fringe ((t (:background ,zenburn-bg-1 :foreground ,zenburn-bg-1)))))
