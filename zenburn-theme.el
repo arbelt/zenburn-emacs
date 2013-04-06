@@ -653,6 +653,7 @@
    `(wl-highlight-summary-answered-face ((t (:foreground ,zenburn-blue))))
    `(wl-highlight-summary-disposed-face ((t (:foreground ,zenburn-fg
                                                          :slant italic))))
+   `(wl-highlight-summary-important-flag-face ((t (:foreground ,zenburn-orange))))
    `(wl-highlight-summary-new-face ((t (:foreground ,zenburn-blue))))
    `(wl-highlight-summary-normal-face ((t (:foreground ,zenburn-fg))))
    `(wl-highlight-summary-thread-top-face ((t (:foreground ,zenburn-yellow))))
