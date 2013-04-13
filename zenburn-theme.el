@@ -4,7 +4,7 @@
 
 ;; Author: Bozhidar Batsov <bozhidar@batsov.com>
 ;; URL: http://github.com/bbatsov/zenburn-emacs
-;; Version: 1.8
+;; Version: 2.0
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -117,7 +117,7 @@
    `(menu ((t (:foreground ,zenburn-fg :background ,zenburn-bg))))
    `(minibuffer-prompt ((t (:foreground ,zenburn-yellow))))
    `(mode-line
-     ((t (:foreground ,zenburn-green+1
+     ((,class (:foreground ,zenburn-green+1
                            :background ,zenburn-bg-1
                            :box (:line-width -1 :style released-button)))
       (t :inverse-video t)))
@@ -126,7 +126,7 @@
      ((t (:foreground ,zenburn-green-1
                       :background ,zenburn-bg-05
                       :box (:line-width -1 :style released-button)))))
-   `(region ((t (:background ,zenburn-bg-1))
+   `(region ((,class (:background ,zenburn-bg-1))
              (t :inverse-video t)))
    `(secondary-selection ((t (:background ,zenburn-bg+2))))
    `(trailing-whitespace ((t (:background ,zenburn-red))))
@@ -219,18 +219,18 @@
    `(ctbl:face-row-select ((t (:background ,zenburn-cyan :foreground ,zenburn-bg))))
 
    ;; diff
-   `(diff-added ((t (:foreground ,zenburn-green+4 :background nil))
+   `(diff-added ((,class (:foreground ,zenburn-green+4 :background nil))
                  (t (:foreground ,zenburn-green-1 :background nil))))
    `(diff-changed ((t (:foreground ,zenburn-yellow))))
-   `(diff-removed ((t (:foreground ,zenburn-red :background nil))
+   `(diff-removed ((,class (:foreground ,zenburn-red :background nil))
                    (t (:foreground ,zenburn-red-3 :background nil))))
    `(diff-refine-added ((t :inherit diff-added :weight bold)))
    `(diff-refine-change ((t :inherit diff-changed :weight bold)))
    `(diff-refine-removed ((t :inherit diff-removed :weight bold)))
-   `(diff-header ((t (:background ,zenburn-bg+2))
+   `(diff-header ((,class (:background ,zenburn-bg+2))
                   (t (:background ,zenburn-fg :foreground ,zenburn-bg))))
    `(diff-file-header
-     ((t (:background ,zenburn-bg+2 :foreground ,zenburn-fg :bold t))
+     ((,class (:background ,zenburn-bg+2 :foreground ,zenburn-fg :bold t))
       (t (:background ,zenburn-fg :foreground ,zenburn-bg :bold t))))
 
    ;; dired+
@@ -406,13 +406,13 @@
    `(helm-ff-directory ((t (:foreground ,zenburn-magenta))))
 
    ;; hl-line-mode
-   `(hl-line-face ((t (:background ,zenburn-bg-05))
+   `(hl-line-face ((,class (:background ,zenburn-bg-05))
                    (t :weight bold)))
-   `(hl-line ((t (:background ,zenburn-bg-05)) ; old emacsen
+   `(hl-line ((,class (:background ,zenburn-bg-05)) ; old emacsen
               (t :weight bold)))
 
    ;; hl-sexp
-   `(hl-sexp-face ((t (:background ,zenburn-bg+1))
+   `(hl-sexp-face ((,class (:background ,zenburn-bg+1))
                    (t :weight bold)))
 
    ;; ido-mode
@@ -449,6 +449,19 @@
    `(magit-section-title ((t (:foreground ,zenburn-yellow :weight bold))))
    `(magit-branch ((t (:foreground ,zenburn-orange :weight bold))))
    `(magit-item-highlight ((t (:background ,zenburn-bg+1))))
+
+   ;; egg
+   `(egg-text-base ((t (:foreground ,zenburn-fg))))
+   `(egg-help-header-1 ((t (:foreground ,zenburn-yellow))))
+   `(egg-help-header-2 ((t (:foreground ,zenburn-green+3))))
+   `(egg-branch ((t (:foreground ,zenburn-yellow))))
+   `(egg-branch-mono ((t (:foreground ,zenburn-yellow))))
+   `(egg-term ((t (:foreground ,zenburn-yellow))))
+   `(egg-diff-add ((t (:foreground ,zenburn-green+4))))
+   `(egg-diff-del ((t (:foreground ,zenburn-red+1))))
+   `(egg-diff-file-header ((t (:foreground ,zenburn-yellow-2))))
+   `(egg-section-title ((t (:foreground ,zenburn-yellow))))
+   `(egg-stash-mono ((t (:foreground ,zenburn-green+4))))
 
    ;; message-mode
    `(message-cited-text ((t (:inherit font-lock-comment))))
@@ -754,7 +767,31 @@
                                           ,zenburn-blue ,zenburn-magenta ,zenburn-cyan ,zenburn-fg])
 
    ;; fill-column-indicator
-   `(fci-rule-color ,zenburn-bg-05)))
+   `(fci-rule-color ,zenburn-bg-05)
+
+   ;; vc-annotate
+   `(vc-annotate-color-map
+     '(( 20. . ,zenburn-red-1)
+       ( 40. . ,zenburn-red)
+       ( 60. . ,zenburn-orange)
+       ( 80. . ,zenburn-yellow-2)
+       (100. . ,zenburn-yellow-1)
+       (120. . ,zenburn-yellow)
+       (140. . ,zenburn-green-1)
+       (160. . ,zenburn-green)
+       (180. . ,zenburn-green+1)
+       (200. . ,zenburn-green+2)
+       (220. . ,zenburn-green+3)
+       (240. . ,zenburn-green+4)
+       (260. . ,zenburn-cyan)
+       (280. . ,zenburn-blue-2)
+       (300. . ,zenburn-blue-1)
+       (320. . ,zenburn-blue)
+       (340. . ,zenburn-blue+1)
+       (360. . ,zenburn-magenta)))
+   `(vc-annotate-very-old-color ,zenburn-magenta)
+   `(vc-annotate-background ,zenburn-bg-1)
+   ))
 
 ;;;###autoload
 (and load-file-name
