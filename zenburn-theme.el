@@ -597,6 +597,8 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(rainbow-delimiters-depth-10-face ((t (:foreground ,zenburn-orange))))
    `(rainbow-delimiters-depth-11-face ((t (:foreground ,zenburn-green))))
    `( rainbow-delimiters-depth-12-face ((t (:foreground ,zenburn-blue-5))))
+;;;;; perspective
+   `(persp-selected-face ((t (:foreground ,zenburn-cyan :weight bold))))
 ;;;;; rcirc
    `(rcirc-my-nick ((t (:foreground ,zenburn-blue))))
    `(rcirc-other-nick ((t (:foreground ,zenburn-orange))))
