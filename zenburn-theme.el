@@ -279,14 +279,41 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(eshell-ls-special ((t (:foreground ,zenburn-yellow :weight bold))))
    `(eshell-ls-symlink ((t (:foreground ,zenburn-cyan :weight bold))))
 ;;;;; flycheck
-   `(flycheck-error-face ((t (:foreground ,zenburn-red-1 :weight bold :underline t))))
-   `(flycheck-warning-face ((t (:foreground ,zenburn-orange :weight bold :underline t))))
+   `(flycheck-error
+     ((((supports :underline (:style wave)))
+       (:underline (:style wave :color ,zenburn-red) :inherit unspecified))
+      (t (:foreground ,zenburn-red-1 :weight bold :underline t))))
+   `(flycheck-warning
+     ((((supports :underline (:style wave)))
+       (:underline (:style wave :color ,zenburn-orange) :inherit unspecified))
+      (t (:foreground ,zenburn-orange :weight bold :underline t))))
+   `(flycheck-fringe-error ((t (:foreground ,zenburn-red-1 :weight bold))))
+   `(flycheck-fringe-warning ((t (:foreground ,zenburn-orange :weight bold))))
 ;;;;; flymake
-   `(flymake-errline ((t (:foreground ,zenburn-red-1 :weight bold :underline t))))
-   `(flymake-warnline ((t (:foreground ,zenburn-orange :weight bold :underline t))))
+   `(flymake-errline
+     ((((supports :underline (:style wave)))
+       (:underline (:style wave :color ,zenburn-red)
+                   :inherit unspecified :foreground unspecified :background unspecified))
+      (t (:foreground ,zenburn-red-1 :weight bold :underline t))))
+   `(flymake-warnline
+     ((((supports :underline (:style wave)))
+       (:underline (:style wave :color ,zenburn-orange)
+                   :inherit unspecified :foreground unspecified :background unspecified))
+      (t (:foreground ,zenburn-orange :weight bold :underline t))))
+   `(flymake-infoline
+     ((((supports :underline (:style wave)))
+       (:underline (:style wave :color ,zenburn-green)
+                   :inherit unspecified :foreground unspecified :background unspecified))
+      (t (:foreground ,zenburn-green-1 :weight bold :underline t))))
 ;;;;; flyspell
-   `(flyspell-duplicate ((t (:foreground ,zenburn-orange :weight bold :underline t))))
-   `(flyspell-incorrect ((t (:foreground ,zenburn-red-1 :weight bold :underline t))))
+   `(flyspell-duplicate
+     ((((supports :underline (:style wave)))
+       (:underline (:style wave :color ,zenburn-orange) :inherit unspecified))
+      (t (:foreground ,zenburn-orange :weight bold :underline t))))
+   `(flyspell-incorrect
+     ((((supports :underline (:style wave)))
+       (:underline (:style wave :color ,zenburn-red) :inherit unspecified))
+      (t (:foreground ,zenburn-red-1 :weight bold :underline t))))
 ;;;;; erc
    `(erc-action-face ((t (:inherit erc-default-face))))
    `(erc-bold-face ((t (:weight bold))))
@@ -450,7 +477,7 @@ Also bind `class' to ((class color) (min-colors 89))."
 ;;;;; magit
    `(magit-section-title ((t (:foreground ,zenburn-yellow :weight bold))))
    `(magit-branch ((t (:foreground ,zenburn-orange :weight bold))))
-   `(magit-item-highlight ((t (:background ,zenburn-bg+1))))
+   `(magit-item-highlight ((t (:background ,zenburn-bg+1 :bold nil))))
 ;;;;; egg
    `(egg-text-base ((t (:foreground ,zenburn-fg))))
    `(egg-help-header-1 ((t (:foreground ,zenburn-yellow))))
@@ -788,21 +815,21 @@ This requires library `rainbow-mode'.")
 
 (defvar zenburn-colors-font-lock-keywords nil)
 
-(defadvice rainbow-turn-on (after zenburn activate)
-  "Maybe also add font-lock keywords for zenburn colors."
-  (when (and (derived-mode-p 'emacs-lisp-mode)
-             (or zenburn-add-font-lock-keywords
-                 (equal (file-name-nondirectory (buffer-file-name))
-                        "zenburn-theme.el")))
-    (unless zenburn-colors-font-lock-keywords
-      (setq zenburn-colors-font-lock-keywords
-            `((,(regexp-opt (mapcar 'car zenburn-colors-alist) 'words)
-               (0 (rainbow-colorize-by-assoc zenburn-colors-alist))))))
-    (font-lock-add-keywords nil zenburn-colors-font-lock-keywords)))
+;; (defadvice rainbow-turn-on (after zenburn activate)
+;;   "Maybe also add font-lock keywords for zenburn colors."
+;;   (when (and (derived-mode-p 'emacs-lisp-mode)
+;;              (or zenburn-add-font-lock-keywords
+;;                  (equal (file-name-nondirectory (buffer-file-name))
+;;                         "zenburn-theme.el")))
+;;     (unless zenburn-colors-font-lock-keywords
+;;       (setq zenburn-colors-font-lock-keywords
+;;             `((,(regexp-opt (mapcar 'car zenburn-colors-alist) 'words)
+;;                (0 (rainbow-colorize-by-assoc zenburn-colors-alist))))))
+;;     (font-lock-add-keywords nil zenburn-colors-font-lock-keywords)))
 
-(defadvice rainbow-turn-off (after zenburn activate)
-  "Also remove font-lock keywords for zenburn colors."
-  (font-lock-remove-keywords nil zenburn-colors-font-lock-keywords))
+;; (defadvice rainbow-turn-off (after zenburn activate)
+;;   "Also remove font-lock keywords for zenburn colors."
+;;   (font-lock-remove-keywords nil zenburn-colors-font-lock-keywords))
 
 ;;; Footer
 
