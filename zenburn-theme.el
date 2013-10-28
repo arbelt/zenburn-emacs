@@ -189,16 +189,18 @@ Also bind `class' to ((class color) (min-colors 89))."
      ((t (:foreground ,zenburn-fg-1 :background ,zenburn-bg :inverse-video nil))))
    `(ace-jump-face-foreground
      ((t (:foreground ,zenburn-green+2 :background ,zenburn-bg :inverse-video nil))))
+;;;;; anzu
+   `(anzu-mode-line ((t (:foreground ,zenburn-cyan :weight bold))))
 ;;;;; full-ack
    `(ack-separator ((t (:foreground ,zenburn-fg))))
    `(ack-file ((t (:foreground ,zenburn-blue))))
    `(ack-line ((t (:foreground ,zenburn-yellow))))
    `(ack-match ((t (:foreground ,zenburn-orange :background ,zenburn-bg-1 :weight bold))))
 ;;;;; auctex
-   `(font-latex-bold ((t (:inherit bold))))
-   `(font-latex-warning ((t (:inherit font-lock-warning))))
-   `(font-latex-sedate ((t (:foreground ,zenburn-yellow :weight bold ))))
-   `(font-latex-title-4 ((t (:inherit variable-pitch :weight bold))))
+   `(font-latex-bold-face ((t (:inherit bold))))
+   `(font-latex-warning-face ((t (:inherit font-lock-warning))))
+   `(font-latex-sectioning-5-face ((t (:foreground ,zenburn-red :weight bold ))))
+   `(font-latex-sedate-face ((t (:foreground ,zenburn-yellow))))
 ;;;;; auto-complete
    `(ac-candidate-face ((t (:background ,zenburn-bg+3 :foreground "black"))))
    `(ac-selection-face ((t (:background ,zenburn-blue-4 :foreground ,zenburn-fg))))
@@ -264,6 +266,23 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(diredp-read-priv ((t (:foreground ,zenburn-green-1))))
    `(diredp-symlink ((t (:foreground ,zenburn-yellow))))
    `(diredp-write-priv ((t (:foreground ,zenburn-magenta))))
+;;;;; ediff
+   `(ediff-current-diff-A ((t (:foreground ,zenburn-fg :background ,zenburn-red-4))))
+   `(ediff-current-diff-Ancestor ((t (:foreground ,zenburn-fg :background ,zenburn-red-4))))
+   `(ediff-current-diff-B ((t (:foreground ,zenburn-fg :background ,zenburn-green-1))))
+   `(ediff-current-diff-C ((t (:foreground ,zenburn-fg :background ,zenburn-blue-5))))
+   `(ediff-even-diff-A ((t (:background ,zenburn-bg+1))))
+   `(ediff-even-diff-Ancestor ((t (:background ,zenburn-bg+1))))
+   `(ediff-even-diff-B ((t (:background ,zenburn-bg+1))))
+   `(ediff-even-diff-C ((t (:background ,zenburn-bg+1))))
+   `(ediff-fine-diff-A ((t (:foreground ,zenburn-fg :background ,zenburn-red-2 :weight bold))))
+   `(ediff-fine-diff-Ancestor ((t (:foreground ,zenburn-fg :background ,zenburn-red-2 weight bold))))
+   `(ediff-fine-diff-B ((t (:foreground ,zenburn-fg :background ,zenburn-green :weight bold))))
+   `(ediff-fine-diff-C ((t (:foreground ,zenburn-fg :background ,zenburn-blue-3 :weight bold ))))
+   `(ediff-odd-diff-A ((t (:background ,zenburn-bg+2))))
+   `(ediff-odd-diff-Ancestor ((t (:background ,zenburn-bg+2))))
+   `(ediff-odd-diff-B ((t (:background ,zenburn-bg+2))))
+   `(ediff-odd-diff-C ((t (:background ,zenburn-bg+2))))
 ;;;;; ert
    `(ert-test-result-expected ((t (:foreground ,zenburn-green+4 :background ,zenburn-bg))))
    `(ert-test-result-unexpected ((t (:foreground ,zenburn-red :background ,zenburn-bg))))
@@ -440,6 +459,8 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(ido-first-match ((t (:foreground ,zenburn-yellow :weight bold))))
    `(ido-only-match ((t (:foreground ,zenburn-orange :weight bold))))
    `(ido-subdir ((t (:foreground ,zenburn-yellow))))
+;;;;; iedit-mode
+   `(iedit-occurrence ((t (:background ,zenburn-bg+2 :weight bold))))
 ;;;;; js2-mode
    `(js2-warning ((t (:underline ,zenburn-orange))))
    `(js2-error ((t (:foreground ,zenburn-red :weight bold))))
@@ -615,6 +636,21 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(outline-6 ((t (:foreground ,zenburn-green+2))))
    `(outline-7 ((t (:foreground ,zenburn-red-4))))
    `(outline-8 ((t (:foreground ,zenburn-blue-4))))
+;;;;; p4
+   `(p4-depot-added-face ((t :inherit diff-added)))
+   `(p4-depot-branch-op-face ((t :inherit diff-changed)))
+   `(p4-depot-deleted-face ((t :inherit diff-removed)))
+   `(p4-depot-unmapped-face ((t :inherit diff-changed)))
+   `(p4-diff-change-face ((t :inherit diff-changed)))
+   `(p4-diff-del-face ((t :inherit diff-removed)))
+   `(p4-diff-file-face ((t :inherit diff-file-header)))
+   `(p4-diff-head-face ((t :inherit diff-header)))
+   `(p4-diff-ins-face ((t :inherit diff-added)))
+;;;;; powerline
+   `(powerline-active1 ((t (:background ,zenburn-bg-05 :inherit mode-line))))
+   `(powerline-active2 ((t (:background ,zenburn-bg+2 :inherit mode-line))))
+   `(powerline-inactive1 ((t (:background ,zenburn-bg+1 :inherit mode-line-inactive))))
+   `(powerline-inactive2 ((t (:background ,zenburn-bg+3 :inherit mode-line-inactive))))
 ;;;;; rainbow-delimiters
    `(rainbow-delimiters-depth-1-face ((t (:foreground ,zenburn-fg))))
    `(rainbow-delimiters-depth-2-face ((t (:foreground ,zenburn-green+2))))
@@ -665,6 +701,9 @@ Also bind `class' to ((class color) (min-colors 89))."
 ;;;;; show-paren
    `(show-paren-mismatch ((t (:foreground ,zenburn-red-3 :background ,zenburn-bg :weight bold))))
    `(show-paren-match ((t (:foreground ,zenburn-blue-1 :background ,zenburn-bg :weight bold))))
+;;;;; smartparens
+   `(sp-show-pair-mismatch-face ((t (:background ,zenburn-bg+3 :foreground ,zenburn-red-3 :weight bold))))
+   `(sp-show-pair-match-face ((t (:background ,zenburn-bg+3 :weight bold))))
 ;;;;; sml-mode-line
    '(sml-modeline-end-face ((t :inherit default :width condensed)))
 ;;;;; SLIME
@@ -713,6 +752,31 @@ Also bind `class' to ((class color) (min-colors 89))."
                                      :foreground ,zenburn-orange
                                      :weight bold))))
    `(w3m-lnum-minibuffer-prompt ((t (:foreground ,zenburn-yellow))))
+;;;;; web-mode
+   `(web-mode-builtin-face ((t (:inherit ,font-lock-builtin-face))))
+   `(web-mode-comment-face ((t (:inherit ,font-lock-comment-face))))
+   `(web-mode-constant-face ((t (:inherit ,font-lock-constant-face))))
+   `(web-mode-css-at-rule-face ((t (:foreground ,zenburn-orange ))))
+   `(web-mode-css-prop-face ((t (:foreground ,zenburn-orange))))
+   `(web-mode-css-pseudo-class-face ((t (:foreground ,zenburn-green+3 :weight bold))))
+   `(web-mode-css-rule-face ((t (:foreground ,zenburn-blue))))
+   `(web-mode-doctype-face ((t (:inherit ,font-lock-comment-face))))
+   `(web-mode-folded-face ((t (:underline t))))
+   `(web-mode-function-name-face ((t (:foreground ,zenburn-blue))))
+   `(web-mode-html-attr-name-face ((t (:foreground ,zenburn-orange))))
+   `(web-mode-html-attr-value-face ((t (:inherit ,font-lock-string-face))))
+   `(web-mode-html-tag-face ((t (:foreground ,zenburn-cyan))))
+   `(web-mode-keyword-face ((t (:inherit ,font-lock-keyword-face))))
+   `(web-mode-preprocessor-face ((t (:inherit ,font-lock-preprocessor-face))))
+   `(web-mode-string-face ((t (:inherit ,font-lock-string-face))))
+   `(web-mode-type-face ((t (:inherit ,font-lock-type-face))))
+   `(web-mode-variable-name-face ((t (:inherit ,font-lock-variable-name-face))))
+   `(web-mode-server-background-face ((t (:background ,zenburn-bg))))
+   `(web-mode-server-comment-face ((t (:inherit web-mode-comment-face))))
+   `(web-mode-server-string-face ((t (:inherit web-mode-string-face))))
+   `(web-mode-symbol-face ((t (:inherit font-lock-constant-face))))
+   `(web-mode-warning-face ((t (:inherit font-lock-warning-face))))
+   `(web-mode-whitespaces-face ((t (:background ,zenburn-red))))
 ;;;;; whitespace-mode
    `(whitespace-space ((t (:background ,zenburn-bg+1 :foreground ,zenburn-bg+1))))
    `(whitespace-hspace ((t (:background ,zenburn-bg+1 :foreground ,zenburn-bg+1))))
