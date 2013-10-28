@@ -481,6 +481,9 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(jabber-title-small ((t (:height 1.1 :weight bold))))
    `(jabber-title-medium ((t (:height 1.2 :weight bold))))
    `(jabber-title-large ((t (:height 1.3 :weight bold))))
+
+;;;;; ledger
+   `(ledger-font-xact-highlight-face ((t :background ,zenburn-bg+1)))
 ;;;;; linum-mode
    `(linum ((t (:foreground ,zenburn-green+2 :background ,zenburn-bg))))
 ;;;;; macrostep
