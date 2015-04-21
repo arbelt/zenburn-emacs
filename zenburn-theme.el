@@ -709,6 +709,8 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(mu4e-cited-7-face ((t (:foreground ,zenburn-blue    :slant italic))))
    `(mu4e-replied-face ((t (:foreground ,zenburn-bg+3))))
    `(mu4e-trashed-face ((t (:foreground ,zenburn-bg+3 :strike-through t))))
+;;;;; mmm
+   `(mmm-default-submode-face ((t (:background ,zenburn-bg+05))))
 ;;;;; mumamo
    `(mumamo-background-chunk-major ((t (:background nil))))
    `(mumamo-background-chunk-submode1 ((t (:background ,zenburn-bg-1))))
@@ -900,17 +902,17 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(term-color-black ((t (:foreground ,zenburn-bg
                                        :background ,zenburn-bg-1))))
    `(term-color-red ((t (:foreground ,zenburn-red-2
-                                       :background ,zenburn-red-4))))
+                                     :background ,zenburn-red-4))))
    `(term-color-green ((t (:foreground ,zenburn-green
                                        :background ,zenburn-green+2))))
    `(term-color-yellow ((t (:foreground ,zenburn-orange
-                                       :background ,zenburn-yellow))))
+                                        :background ,zenburn-yellow))))
    `(term-color-blue ((t (:foreground ,zenburn-blue-1
                                       :background ,zenburn-blue-4))))
    `(term-color-magenta ((t (:foreground ,zenburn-magenta
                                          :background ,zenburn-red))))
    `(term-color-cyan ((t (:foreground ,zenburn-cyan
-                                       :background ,zenburn-blue))))
+                                      :background ,zenburn-blue))))
    `(term-color-white ((t (:foreground ,zenburn-fg
                                        :background ,zenburn-fg-1))))
    '(term-default-fg-color ((t (:inherit term-color-white))))
